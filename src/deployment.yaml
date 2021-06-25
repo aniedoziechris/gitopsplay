@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: play
+  namespace: play
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: play
+  template:
+    metadata:
+      namespace: play
+      labels:
+        app: play
+    spec:
+      containers:
+      - name: play
+        image: nginx
+        ports:
+        - containerPort: 80
+          name: http
