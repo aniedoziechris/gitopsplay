@@ -22,6 +22,18 @@ spec:
           name: http
           
 -------------------------------
+apiVersion: v1
+kind: Service
+metadata:
+  name: play
+  namespace: play
+spec:
+  ports:
+  - port: 80
+  selector:
+    app: play
+    
+-------------------------------
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
